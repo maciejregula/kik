@@ -2,6 +2,8 @@
 
 import styled from "styled-components";
 import PreferenceLink from "../Core/PreferenceLink";
+import Map from "@/app/Core/map";
+import Footer from "@/app/Core/footer";
 
 const Krawedzi: React.FC = () => {
   return (
@@ -14,10 +16,10 @@ const Krawedzi: React.FC = () => {
           />
         </LogoContainer>
         <Nav>
-          <NavLink href="#">SERWIS NARCIARSKI I SNOWBOARDOWY</NavLink>
-          <NavLink href="#">WYPOŻYCZALNIA</NavLink>
-          <NavLink href="#">O NAS</NavLink>
-          <NavLink href="#">KONTAKT</NavLink>
+          <NavLink href="#serwis">SERWIS NARCIARSKI I SNOWBOARDOWY</NavLink>
+          <NavLink href="#wypozyczalnia">WYPOŻYCZALNIA</NavLink>
+          <NavLink href="#o-nas">O NAS</NavLink>
+          <NavLink href="#kontakt">KONTAKT</NavLink>
           <SwitchLink to="/kola">PRACOWNIA KOŁA</SwitchLink>
         </Nav>
       </Header>
@@ -38,7 +40,7 @@ const Krawedzi: React.FC = () => {
 
       <ContentSection>
         {/* SERWIS NARCIARSKI I SNOWBOARDOWY */}
-        <SectionTitle>Serwis narciarski i snowboardy</SectionTitle>
+        <SectionTitle id="serwis">Serwis narciarski i snowboardy</SectionTitle>
         <IntroText>
           Dbamy o Twój sprzęt tak, jakby był nasz własny –{" "}
           <strong>każdy serwis wykonujemy</strong>
@@ -167,7 +169,7 @@ const Krawedzi: React.FC = () => {
         {/* CENY USŁUG ENDS */}
 
         {/* WYPOŻYCZALNIA */}
-        <SectionTitle>Wypożyczalnia</SectionTitle>
+        <SectionTitle id="wypozyczalnia">Wypożyczalnia</SectionTitle>
         <IntroText>
           <strong>Wybierz idealny sprzęt dla siebie i rodziny.</strong> W naszej
           wypożyczalni znajdziesz kompletne zestawynarciarskie starranie dobrane
@@ -348,70 +350,84 @@ const Krawedzi: React.FC = () => {
           </PricingCard>
         </PricingGrid>
         {/* CENNIK WYPOŻYCZALNI ENDS */}
-
-        {/* O NAS */}
-        <SectionTitle>O NAS</SectionTitle>
-        <IntroText style={{ marginBottom: "60px" }}>
-          Za Pracownią Krawędzi i Pracownią Koła stoją ojciec i syn – Marek i
-          Wojciech.
-          <br />
-          Działamy razem, łącząc <strong>doświadczenie</strong>,{" "}
-          <strong>pasję</strong> i <strong>zamiłowanie do narciarstwa</strong>.
-        </IntroText>
-
-        <ProfilesGrid>
-          <ProfileCard>
-            <ProfileImage src="/images/krawedzi/wojtek.jpg" alt="Wojciech" />
-            <ProfileName>Wojciech</ProfileName>
-            <ProfileBio>
-              Instruktor narciarstwa i snowboardu, psycholog sportu i serwisant
-              w jednym. Uczy jeździć bez stresu i z uśmiechem, a narty i deski
-              traktuje lepiej niż niektórzy własne auto – ostrzy, smaruje,
-              naprawia, dopieszcza.
-            </ProfileBio>
-          </ProfileCard>
-
-          <ProfileCard>
-            <ProfileImage src="/images/krawedzi/wojtek.jpg" alt="Marek" />
-            <ProfileName>Marek</ProfileName>
-            <ProfileBio>
-              Pasjonat narciarstwa i majsterkowicz. Serwisant, który sprawia, że
-              sprzęt działa lepiej niż nowy, ostrzy narty z zegarmistrzowską
-              precyzją i, jak sam mówi, czasem „za bardzo się doktoryzuje”.
-            </ProfileBio>
-          </ProfileCard>
-        </ProfilesGrid>
-
-        <AboutBottomSection>
-          <AboutTextContent>
-            <p>
-              <em>
-                Tworzymy to miejsce z myślą o ludziach, którzy doceniają jakość,
-                ręczną robotę i uczciwe podejście.
-              </em>
-            </p>
-            <p>
-              <em>
-                To nie tylko serwis i wypożyczalnia – to lokalna, rodzinna
-                pracownia, gdzie Twoim sprzętem zajmą się ludzie, którzy to
-                lubią i naprawdę się na tym znają.
-              </em>
-            </p>
-            <Signature>
-              Zapraszamy!
-              <br />
-              <strong>Wojciech i Marek</strong>
-            </Signature>
-          </AboutTextContent>
-          <AboutImageWrapper>
-            <AboutTeamImage
-              src="/images/krawedzi/serwis-ludzie.jpg"
-              alt="Wojciech i Marek w serwisie"
-            />
-          </AboutImageWrapper>
-        </AboutBottomSection>
-        {/* O NAS ENDS */}
       </ContentSection>
+
+      {/* O NAS */}
+      <TeamContainer>
+        <ContentSection style={{ backgroundColor: "transparent" }}>
+          <SectionTitle id="o-nas">O NAS</SectionTitle>
+          <IntroText style={{ marginBottom: "60px" }}>
+            Za Pracownią Krawędzi i Pracownią Koła stoją ojciec i syn – Marek i
+            Wojciech.
+            <br />
+            Działamy razem, łącząc <strong>doświadczenie</strong>,{" "}
+            <strong>pasję</strong> i <strong>zamiłowanie do narciarstwa</strong>
+            .
+          </IntroText>
+
+          <ProfilesGrid>
+            <ProfileCard>
+              <ProfileImage src="/images/krawedzi/wojtek.jpg" alt="Wojciech" />
+              <ProfileName>Wojciech</ProfileName>
+              <ProfileBio>
+                Instruktor narciarstwa i snowboardu, psycholog sportu i
+                serwisant w jednym. Uczy jeździć bez stresu i z uśmiechem, a
+                narty i deski traktuje lepiej niż niektórzy własne auto –
+                ostrzy, smaruje, naprawia, dopieszcza.
+              </ProfileBio>
+            </ProfileCard>
+
+            <ProfileCard>
+              <ProfileImage src="/images/krawedzi/wojtek.jpg" alt="Marek" />
+              <ProfileName>Marek</ProfileName>
+              <ProfileBio>
+                Pasjonat narciarstwa i majsterkowicz. Serwisant, który sprawia,
+                że sprzęt działa lepiej niż nowy, ostrzy narty z
+                zegarmistrzowską precyzją i, jak sam mówi, czasem „za bardzo się
+                doktoryzuje”.
+              </ProfileBio>
+            </ProfileCard>
+          </ProfilesGrid>
+
+          <AboutBottomSection style={{ marginBottom: 0, maxWidth: "1280px" }}>
+            <AboutTextContent>
+              <p>
+                <em>
+                  Tworzymy to miejsce z myślą o ludziach, którzy doceniają
+                  jakość, ręczną robotę i uczciwe podejście.
+                </em>
+              </p>
+              <p>
+                <em>
+                  To nie tylko serwis i wypożyczalnia – to lokalna, rodzinna
+                  pracownia, gdzie Twoim sprzętem zajmą się ludzie, którzy to
+                  lubią i naprawdę się na tym znają.
+                </em>
+              </p>
+              <Signature>
+                Zapraszamy!
+                <br />
+                <strong>Wojciech i Marek</strong>
+              </Signature>
+            </AboutTextContent>
+            <AboutImageWrapper>
+              <AboutTeamImage
+                src="/images/krawedzi/serwis-ludzie.jpg"
+                alt="Wojciech i Marek w serwisie"
+              />
+            </AboutImageWrapper>
+          </AboutBottomSection>
+        </ContentSection>
+      </TeamContainer>
+      {/* O NAS ENDS */}
+
+      {/* MAP */}
+      <Map variant={"krawedzi"} />
+      {/* MAP ENDS */}
+
+      {/* FOOTER */}
+      <Footer variant={"krawedzi"} />
+      {/* FOOTER ENDS */}
     </Page>
   );
 };
@@ -537,7 +553,7 @@ const ContentSection = styled.section`
   max-width: 1280px; /* Zwiększono z 1200px, aby karty miały więcej miejsca */
   margin: 0 auto;
   display: flex;
-
+  box-sizing: border-box;
   flex-direction: column;
   align-items: center; /* Centruje wszystko w poziomie */
   text-align: center; /* Centruje tekst wewnątrz elementów */
@@ -553,6 +569,9 @@ const SectionTitle = styled.h2`
   margin-bottom: 25px;
   letter-spacing: 1px;
   color: #000;
+
+  /* To naprawia problem zasłaniania przez nagłówek */
+  scroll-margin-top: 80px;
 `;
 
 const IntroText = styled.p`
@@ -893,6 +912,16 @@ const SmallSelectionImage = styled.img`
   border-radius: 20px;
 `;
 
+const TeamContainer = styled.div`
+  margin-top: 100px;
+  padding-bottom: 100px;
+  background: #f9f8f8;
+  width: 100%; /* Naturalna szerokość */
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center; /* Centrowanie wewnętrznego kontenera */
+`;
+
 const ProfilesGrid = styled.div`
   display: flex;
   justify-content: center;
@@ -918,7 +947,7 @@ const ProfileImage = styled.img`
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 24px;
-  border: 4px solid #fff;
+
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 `;
 
@@ -930,7 +959,7 @@ const ProfileName = styled.h4`
 `;
 
 const ProfileBio = styled.p`
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: #404040;
 `;
@@ -954,7 +983,7 @@ const AboutBottomSection = styled.div`
 const AboutTextContent = styled.div`
   flex: 1;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   color: #000;
   display: flex;
@@ -987,7 +1016,6 @@ const AboutTeamImage = styled.img`
   width: 100%;
   max-width: 600px;
   border-radius: 24px;
-  border: 4px solid #4f84f7; /* Niebieska ramka widoczna na screenie */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 `;
 
