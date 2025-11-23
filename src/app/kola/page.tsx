@@ -1,39 +1,18 @@
 "use client";
 
-import styled from "styled-components";
-import PreferenceLink from "../Core/PreferenceLink";
-
-const Page = styled.main`
-  padding: 24px;
-`;
-
-const Top = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-`;
-
-const Brand = styled.img`
-  height: 36px;
-  width: auto;
-`;
+import Menu from "@/app/Core/menu";
+import Map from "@/app/Core/map";
+import Footer from "@/app/Core/footer";
+import Hero, { Page } from "@/app/Core/hero";
 
 const Kola: React.FC = () => {
   return (
     <Page>
-      <Top>
-        <Brand src="/images/logos/pracownia-kola.svg" alt="Pracownia Koła" />
-        <nav>
-          <PreferenceLink to="/krawedzi">Pracownia Krawędzi</PreferenceLink>
-        </nav>
-      </Top>
+      <Menu variant={"kola"} />
+      <Hero variant={"kola"} />
 
-      {/* poniżej wstawisz treść jak na Twoim ekranie 4 */}
-      <section style={{ marginTop: 24 }}>
-        <h1>Serwis rowerowy</h1>
-        <p>Lista usług, pakiety, cennik itp.</p>
-      </section>
+      <Map variant={"kola"} />
+      <Footer variant={"kola"} />
     </Page>
   );
 };

@@ -55,7 +55,7 @@ const Panel = styled(PreferenceLink)<{ $type: "krawedzi" | "kola" }>`
     url(${({ $type }) =>
       $type === "krawedzi"
         ? "/images/krawedzi-bg-1.jpg"
-        : "/images/kolga-bg-1.jpg"});
+        : "/images/kola-bg-1.jpg"});
 
   background-size: cover;
   background-position: center;

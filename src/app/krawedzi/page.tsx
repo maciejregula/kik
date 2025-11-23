@@ -4,24 +4,13 @@ import styled from "styled-components";
 import Map from "@/app/Core/map";
 import Footer from "@/app/Core/footer";
 import Menu from "@/app/Core/menu";
+import Hero, { Page } from "@/app/Core/hero";
 
 const Krawedzi: React.FC = () => {
   return (
     <Page>
       <Menu variant="krawedzi" />
-      <HeroSection>
-        <HeroContent>
-          <HeroLogo
-            src="/images/logos/pracownia-krawedzi.svg"
-            alt="Pracownia Krawędzi"
-          />
-          <Quote>
-            Lepiej iść na narty i myśleć o Bogu, niż
-            <br />
-            iść do kościoła i myśleć o nartach.
-          </Quote>
-        </HeroContent>
-      </HeroSection>
+      <Hero variant="krawedzi" />
 
       <ContentSection>
         {/* SERWIS NARCIARSKI I SNOWBOARDOWY */}
@@ -416,48 +405,6 @@ const Krawedzi: React.FC = () => {
     </Page>
   );
 };
-
-const Page = styled.div`
-  min-height: 100vh;
-  font-family: "Poppins", sans-serif;
-  background-color: #fff;
-`;
-
-const HeroSection = styled.section`
-  /* Zmniejszamy max wysokość z 718px na np. 600px, aby sekcja była niższa */
-
-  height: min(calc(100vh - 80px), 718px);
-
-  /* Ostateczny styl Hero z Figmy */
-  background:
-    url("/images/krawedzi/krawedzi-bg.jpg") 25% / cover no-repeat,
-    #3644f6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-`;
-
-const HeroContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-`;
-
-const HeroLogo = styled.img`
-  width: 334px;
-  height: auto;
-`;
-
-const Quote = styled.p`
-  font-size: 18px;
-  font-weight: 400;
-  max-width: 600px;
-  line-height: normal;
-  letter-spacing: -0.36px;
-`;
 
 const ContentSection = styled.section`
   padding: 0 24px;
