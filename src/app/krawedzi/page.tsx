@@ -1,29 +1,14 @@
 "use client";
 
 import styled from "styled-components";
-import PreferenceLink from "../Core/PreferenceLink";
 import Map from "@/app/Core/map";
 import Footer from "@/app/Core/footer";
+import Menu from "@/app/Core/menu";
 
 const Krawedzi: React.FC = () => {
   return (
     <Page>
-      <Header>
-        <LogoContainer>
-          <Brand
-            src="/images/logos/pracownia-krawedzi.svg"
-            alt="Pracownia Krawędzi"
-          />
-        </LogoContainer>
-        <Nav>
-          <NavLink href="#serwis">SERWIS NARCIARSKI I SNOWBOARDOWY</NavLink>
-          <NavLink href="#wypozyczalnia">WYPOŻYCZALNIA</NavLink>
-          <NavLink href="#o-nas">O NAS</NavLink>
-          <NavLink href="#kontakt">KONTAKT</NavLink>
-          <SwitchLink to="/kola">PRACOWNIA KOŁA</SwitchLink>
-        </Nav>
-      </Header>
-
+      <Menu variant="krawedzi" />
       <HeroSection>
         <HeroContent>
           <HeroLogo
@@ -367,7 +352,7 @@ const Krawedzi: React.FC = () => {
 
           <ProfilesGrid>
             <ProfileCard>
-              <ProfileImage src="/images/krawedzi/wojtek.jpg" alt="Wojciech" />
+              <ProfileImage src="/images/wojtek.png" alt="Wojciech" />
               <ProfileName>Wojciech</ProfileName>
               <ProfileBio>
                 Instruktor narciarstwa i snowboardu, psycholog sportu i
@@ -378,7 +363,7 @@ const Krawedzi: React.FC = () => {
             </ProfileCard>
 
             <ProfileCard>
-              <ProfileImage src="/images/krawedzi/wojtek.jpg" alt="Marek" />
+              <ProfileImage src="/images/marek.png" alt="Marek" />
               <ProfileName>Marek</ProfileName>
               <ProfileBio>
                 Pasjonat narciarstwa i majsterkowicz. Serwisant, który sprawia,
@@ -412,7 +397,7 @@ const Krawedzi: React.FC = () => {
             </AboutTextContent>
             <AboutImageWrapper>
               <AboutTeamImage
-                src="/images/krawedzi/serwis-ludzie.jpg"
+                src="/images/serwis-ludzie.jpg"
                 alt="Wojciech i Marek w serwisie"
               />
             </AboutImageWrapper>
@@ -436,80 +421,6 @@ const Page = styled.div`
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
   background-color: #fff;
-`;
-
-const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 56px;
-  padding: 0 40px;
-  /* Ostateczny styl nagłówka z Figmy */
-  background:
-    linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
-    #1d2d74;
-
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-`;
-
-const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Brand = styled.img`
-  height: 40px;
-  width: auto;
-  /* Jeśli SVG jest czarne, trzeba je odwrócić filtrem na białe, 
-     chyba że jest już białe lub ma odpowiedni kolor */
-  filter: brightness(0) invert(1);
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: 32px;
-`;
-
-const NavLink = styled.a`
-  color: white;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: opacity 0.2s;
-
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-
-// Specjalny styl dla linku przełączającego na "Pracownia Koła"
-// Używamy styled(PreferenceLink) aby zachować logikę ciasteczek, ale nadpisujemy style
-const SwitchLink = styled(PreferenceLink)`
-  && {
-    /* Resetujemy style z PreferenceLink */
-    background: transparent;
-    padding: 0;
-    display: inline;
-
-    /* Nowe style */
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: color 0.2s;
-
-    &:hover {
-      color: white;
-      opacity: 1;
-    }
-  }
 `;
 
 const HeroSection = styled.section`
@@ -899,7 +810,7 @@ const SelectionImagesWrapper = styled.div`
 const MainSelectionImage = styled.img`
   width: 85%;
   height: auto;
-  border-radius: 24px;
+  border-radius: 16px;
   display: block;
 `;
 
@@ -909,7 +820,7 @@ const SmallSelectionImage = styled.img`
   right: 0;
   width: 65%;
   height: auto;
-  border-radius: 20px;
+  border-radius: 16px;
 `;
 
 const TeamContainer = styled.div`
@@ -1015,7 +926,7 @@ const AboutImageWrapper = styled.div`
 const AboutTeamImage = styled.img`
   width: 100%;
   max-width: 600px;
-  border-radius: 24px;
+  border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 `;
 
